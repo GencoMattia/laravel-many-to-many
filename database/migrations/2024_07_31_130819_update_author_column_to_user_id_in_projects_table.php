@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
@@ -12,8 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->unsignedBigInteger('author')->change();
-            $table->renameColumn('author', 'user_id');
+            DB::statement("ALTER TABLE `projects` CHANGE COLUMN `author` `user_id` bigint unsigned NOT NULL");
         });
     }
 
@@ -23,8 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->renameColumn('user_id', 'author');
-            $table->string('author')->change();
+            DB::statement("ALTER TABLE `projects` CHANGE COLUMN `user_id` `author` VARCHAR(255)");
         });
     }
 };

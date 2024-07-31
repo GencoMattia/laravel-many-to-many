@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('author');
             $table->text("description");
             $table->string("image");
-            $table->string("technologies");
+            // $table->string("technologies")->nullable();
             $table->string("client");
             $table->string("creation_date");
             $table->timestamps();

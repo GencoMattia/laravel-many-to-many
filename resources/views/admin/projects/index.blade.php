@@ -24,9 +24,9 @@
                         <td>{{ $project->user->name }}</td>
                         <td>{{ $project->type->name }}</td>
                         <td>
-                            @php
+                            {{-- @php
                                 dd($project->technologies);
-                            @endphp
+                            @endphp --}}
                             @forelse ( $project->technologies as $technology )
                                 {{ $technology->name }}
                             @empty

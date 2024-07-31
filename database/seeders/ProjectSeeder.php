@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,6 +19,7 @@ class ProjectSeeder extends Seeder
     {
         //
         $types = Type::all()->pluck("id");
+        $users = User::all()->pluck("id");
 
         $projects = [
             [
@@ -27,7 +29,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'spellgard.jpg',
                 'technologies' => 'Magia arcana, ingegneria dwarven',
                 'client' => 'Arcimago Elminster',
-                'author' => 'Halaster Blackcloak',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1372, 5, 12),
             ],
             [
@@ -37,7 +39,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'evermeet.jpg',
                 'technologies' => 'Magia elfica, rune di teletrasporto',
                 'client' => 'Regina Amlaruil',
-                'author' => 'Elminster Aumar',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1368, 8, 22),
             ],
             [
@@ -47,7 +49,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'undermountain.jpg',
                 'technologies' => 'Cartografia, incantesimi di rilevamento',
                 'client' => 'Gilda degli Esploratori',
-                'author' => 'Drizzt Do\'Urden',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1354, 3, 1),
             ],
             [
@@ -57,7 +59,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'luskanfleet.jpg',
                 'technologies' => 'Ingegneria navale, magia del vento',
                 'client' => 'Capitano Deudermont',
-                'author' => 'Taern "Cornuggia" Hornblade',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1365, 10, 7),
             ],
             [
@@ -67,7 +69,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'mithralmines.jpg',
                 'technologies' => 'Macchinari nanici, incantesimi di rilevamento',
                 'client' => 'Clan Ironfist',
-                'author' => 'Baern "Occhiodipietra" Stonebrow',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1358, 6, 18),
             ],
             [
@@ -77,7 +79,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'helmtemple.jpg',
                 'technologies' => 'Architettura sacra, rune di protezione',
                 'client' => 'Sommo Sacerdote di Helm',
-                'author' => 'Khelben "Bastone Nero" Arunsun',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1362, 1, 4),
             ],
             [
@@ -87,7 +89,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'wizardacademy.jpg',
                 'technologies' => 'Illusioni magiche, cristalli di memoria',
                 'client' => 'Arcimago Theledorn',
-                'author' => 'Mordenkainen',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1360, 9, 15),
             ],
             [
@@ -97,7 +99,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'thievesguild.jpg',
                 'technologies' => 'Linguaggi in codice, messaggi cifrati',
                 'client' => 'Pasha Pook',
-                'author' => 'Artemis Entreri',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1367, 2, 13),
             ],
             [
@@ -107,7 +109,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'volothampcircus.jpg',
                 'technologies' => 'Acrobazia, illusioni minori',
                 'client' => 'Volothamp Geddarm',
-                'author' => 'Fzoul Chembryl',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1371, 7, 3),
             ],
             [
@@ -117,7 +119,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'sundabarfortress.jpg',
                 'technologies' => 'Fortificazioni, trappole meccaniche',
                 'client' => 'Re Helmfast',
-                'author' => 'Catti-brie',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1369, 12, 20),
             ],
             [
@@ -127,7 +129,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'mielikkishrine.jpg',
                 'technologies' => 'Magia della natura, botanica',
                 'client' => 'Alta Sacerdotessa di Mielikki',
-                'author' => 'Jaheira',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1366, 4, 28),
             ],
             [
@@ -137,7 +139,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'orderofthegauntlet.jpg',
                 'technologies' => 'Forgiatura, incantesimi di protezione',
                 'client' => 'Sir Isteval',
-                'author' => 'Gromph Baenre',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1359, 8, 5),
             ],
             [
@@ -147,7 +149,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'battlehammerclan.jpg',
                 'technologies' => 'Ingegneria nanica, trappole meccaniche',
                 'client' => 'Re Bruenor Battlehammer',
-                'author' => 'Athrogate',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1355, 2, 11),
             ],
             [
@@ -157,7 +159,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'ramazithtower.jpg',
                 'technologies' => 'Disattivazione di trappole, decifrazione di rune',
                 'client' => 'Gilda degli Avventurieri',
-                'author' => 'Minsc',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1373, 1, 9),
             ],
             [
@@ -167,7 +169,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'dragonwell.jpg',
                 'technologies' => 'Cristalli di comunicazione, magia di divinazione',
                 'client' => 'Consiglio di Neverwinter',
-                'author' => 'Volothamp Geddarm',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1364, 5, 23),
             ],
             [
@@ -177,7 +179,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'waterdeepmarket.jpg',
                 'technologies' => 'Linguaggi di programmazione, interfacce utente',
                 'client' => 'Signori Mascherati',
-                'author' => 'Khelben "Bastone Nero" Arunsun',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1370, 8, 24),
             ],
             [
@@ -187,7 +189,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'adventurersguild.jpg',
                 'technologies' => 'Gestione dati, interfacce utente',
                 'client' => 'Durnan',
-                'author' => 'Volothamp Geddarm',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1356, 7, 4),
             ],
             [
@@ -197,7 +199,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'tyrtemple.jpg',
                 'technologies' => 'Restauro artistico, magia della luce',
                 'client' => 'Sommo Sacerdote di Tyr',
-                'author' => 'Storm Silverhand',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1363, 9, 28),
             ],
             [
@@ -207,7 +209,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'bardschool.jpg',
                 'technologies' => 'Liuteria, incantesimi di suono',
                 'client' => 'Maestro Lelar',
-                'author' => 'Danica Graysteel',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1357, 4, 16),
             ],
             [
@@ -217,7 +219,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'clocktower.jpg',
                 'technologies' => 'Orologeria, magia del tempo',
                 'client' => 'Consiglio di Waterdeep',
-                'author' => 'Khelben "Bastone Nero" Arunsun',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1361, 11, 8),
             ],
             [
@@ -227,7 +229,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'neverwinterpalace.jpg',
                 'technologies' => 'Giardinaggio, magia della natura',
                 'client' => 'Lord Neverember',
-                'author' => 'Lady Aribeth de Tylmarande',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1368, 3, 5),
             ],
             [
@@ -237,7 +239,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'baldursgatefair.jpg',
                 'technologies' => 'Illusioni, meccanica',
                 'client' => 'Duca Portyr',
-                'author' => 'Imoen',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1372, 9, 30),
             ],
             [
@@ -247,7 +249,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'merchantguild.jpg',
                 'technologies' => 'Corrieri, messaggi cifrati',
                 'client' => 'Lady Rylanthra',
-                'author' => 'Xanathar',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1360, 2, 2),
             ],
             [
@@ -257,7 +259,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'sunetemple.jpg',
                 'technologies' => 'Scultura, magia della luce, pietre preziose',
                 'client' => 'Somma Sacerdotessa di Sune',
-                'author' => 'Leosin Erlanthar',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1369, 6, 14),
             ],
             [
@@ -267,7 +269,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'thiefschool.jpg',
                 'technologies' => 'Illusioni, meccanica, trappole',
                 'client' => 'Gilda dei Ladri',
-                'author' => 'Safana',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1365, 1, 19),
             ],
             [
@@ -277,7 +279,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'zhentarimtower.jpg',
                 'technologies' => 'Spionaggio, sabotaggio, incantesimi di occultamento',
                 'client' => 'Arpisti',
-                'author' => 'Laeral Silverhand',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1371, 4, 5),
             ],
             [
@@ -287,7 +289,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'silverymoonwell.jpg',
                 'technologies' => 'Ingegneria idraulica, magia dell\'acqua',
                 'client' => 'Consiglio di Silverymoon',
-                'author' => 'Alustriel Silverhand',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1359, 7, 27),
             ],
             [
@@ -297,7 +299,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'scornubelmarket.jpg',
                 'technologies' => 'Lampade magiche, cristalli luminosi',
                 'client' => 'Gilda dei Mercanti di Scornubel',
-                'author' => 'Maegera "Noctiluca" Brightlock',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1373, 3, 12),
             ],
             [
@@ -307,7 +309,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'artisanguild.jpg',
                 'technologies' => 'Web design, e-commerce',
                 'client' => 'Gilda degli Artigiani di Waterdeep',
-                'author' => 'Larloch',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1370, 10, 3),
             ],
             [
@@ -317,7 +319,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'gondtemple.jpg',
                 'technologies' => 'Scultura, metallurgia, magia della terra',
                 'client' => 'Sommo Sacerdote di Gond',
-                'author' => 'Adbar',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1366, 8, 9),
             ],
             [
@@ -327,7 +329,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'warriorschool.jpg',
                 'technologies' => 'Illusioni magiche, costrutti animati',
                 'client' => 'Ordine del Drago Purpureo',
-                'author' => 'Sir Isteval',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1370, 1, 25),
             ],
             [
@@ -337,7 +339,7 @@ class ProjectSeeder extends Seeder
                 'image' => 'drizzt.jpg',
                 'technologies' => 'Metalli rari, magia drow',
                 'client' => 'Drizzt Do\'Urden',
-                'author' => 'Bruenor Battlehammer',
+                'user_id' => $faker->randomElement($users),
                 'creation_date' => Carbon::create(1356, 11, 2),
             ],
         ];

@@ -8,10 +8,10 @@
                 <tr class="">
                     {{-- <th scope="col">#</th> --}}
                     <th scope="col">Title</th>
+                    <th scope="col">Author</th>
                     <th scope="col">Type</th>
                     <th scope="col">Technologies</th>
                     <th scope="col">Client</th>
-                    <th scope="col">Author</th>
                     <th scope="col">Creation Date</th>
                     <th scope="col">Actions</th>
                 </tr>
@@ -21,10 +21,10 @@
                     <tr>
                         {{-- <th scope="row">{{ $project->id }}</th> --}}
                         <td>{{ $project->title }}</td>
+                        <td>{{ $project->user->name }}</td>
                         <td>{{ $project->type->name }}</td>
                         <td>{{ $project->technologies }}</td>
                         <td>{{ $project->client }}</td>
-                        <td>{{ $project->author }}</td>
                         <td>{{ $project->creation_date }}</td>
                         <td>
                             <a href="{{ route("admin.projects.show", $project) }}" class="btn btn-primary btn-sm">

@@ -18,11 +18,15 @@ class Project extends Model
         'image',
         'technologies',
         'client',
-        'author',
+        'user_id',
         'creation_date',
     ];
 
     public function type(){
         return $this->belongsTo(Type::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

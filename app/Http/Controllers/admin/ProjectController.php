@@ -72,8 +72,9 @@ class ProjectController extends Controller
     {
         //
         $types = Type::all();
+        $technologies = Technology::all();
 
-        return view("admin.projects.edit", compact("project", "types"));
+        return view("admin.projects.edit", compact("project", "types", "technologies"));
     }
 
     /**
@@ -87,8 +88,9 @@ class ProjectController extends Controller
         // $data["author"] = Auth::user()->name;
         // $data["creation_date"] = Carbon::now();
         $project->update($data);
+        $project->technologies()->sync($data["technologies"]);;
 
-        return redirect()->route("admin.projects.show", $project);
+        return redirect()->route("admin.projects.show", $project,);
     }
 
     /**

@@ -19,7 +19,13 @@
                             <strong>Type: </strong>{{ $project->type->name }}
                         </li>
                         <li class="list-group-item">
-                            <strong>Technologies:</strong>{{ $project->technologies }}
+                            <strong>Technologies: </strong>
+                            @forelse ( $project->technologies as $technology )
+                                {{ $technology->name }}
+                                @if (!$loop->last), @endif
+                            @empty
+                                -----
+                            @endforelse
                         </li>
                         <li class="list-group-item">
                             <strong>Client:</strong> {{ $project->client }}

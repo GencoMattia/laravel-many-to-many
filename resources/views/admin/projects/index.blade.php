@@ -29,6 +29,7 @@
                             @endphp --}}
                             @forelse ( $project->technologies as $technology )
                                 {{ $technology->name }}
+                                @if (!$loop->last), @endif
                             @empty
                                 -----
                             @endforelse

@@ -23,7 +23,16 @@
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->user->name }}</td>
                         <td>{{ $project->type->name }}</td>
-                        <td>{{ $project->technologies }}</td>
+                        <td>
+                            @php
+                                dd($project->technologies);
+                            @endphp
+                            @forelse ( $project->technologies as $technology )
+                                {{ $technology->name }}
+                            @empty
+                                -----
+                            @endforelse
+                        </td>
                         <td>{{ $project->client }}</td>
                         <td>{{ $project->creation_date }}</td>
                         <td>

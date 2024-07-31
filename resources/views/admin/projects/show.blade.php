@@ -13,6 +13,9 @@
                     </p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
+                            <strong>Author:</strong> {{ $project->user->name }}
+                        </li>
+                        <li class="list-group-item">
                             <strong>Type: </strong>{{ $project->type->name }}
                         </li>
                         <li class="list-group-item">
@@ -20,9 +23,6 @@
                         </li>
                         <li class="list-group-item">
                             <strong>Client:</strong> {{ $project->client }}
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Author:</strong> {{ $project->author }}
                         </li>
                         <li class="list-group-item">
                             <strong>Creation Date:</strong> {{ $project->creation_date }}

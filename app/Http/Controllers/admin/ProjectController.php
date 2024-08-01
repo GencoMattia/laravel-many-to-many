@@ -11,6 +11,7 @@ use App\Models\Type;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -47,6 +48,9 @@ class ProjectController extends Controller
 
         $data = $request->validated();
 
+        $img_path = Storage::put("uploads/projects", $data["image"]);
+
+        $data["image"] = $img_path;
         $data["user_id"] = Auth::user()->id;
         $data["creation_date"] = Carbon::now();
         $newProject = Project::create($data);

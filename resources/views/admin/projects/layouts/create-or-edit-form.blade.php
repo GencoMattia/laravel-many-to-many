@@ -14,7 +14,7 @@
                 </ul>
             </div>
         @endif
-        <form action="@yield("form-action")" method="POST">
+        <form action="@yield("form-action")" method="POST" enctype="multipart/form-data">
             @csrf
             @yield("form-method")
 
@@ -57,7 +57,7 @@
                 <label for="image">
                     Image url:
                 </label>
-                <input type="text" name="image" id="image" class="form-control" value="{{ old("image", $project->image) }}">
+                <input type="file" name="image" id="image" class="form-control" value="{{ old("image", $project->image) }}">
             </div>
             <div class="mb-3">
                 <label for="client">
